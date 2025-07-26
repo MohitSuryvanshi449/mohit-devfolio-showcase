@@ -10,7 +10,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-purple-900/60 to-cyan-900/40" />
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
@@ -61,9 +61,9 @@ const Hero = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full animate-float" />
-      <div className="absolute bottom-20 right-10 w-16 h-16 bg-secondary/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 right-20 w-12 h-12 bg-accent/20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-float neon-glow" />
+      <div className="absolute bottom-20 right-10 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-20 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-float" style={{ animationDelay: '2s' }} />
     </section>
   );
 };
