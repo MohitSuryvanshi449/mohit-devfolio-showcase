@@ -7,10 +7,10 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 gradient-bg opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/50 to-black/80" />
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
