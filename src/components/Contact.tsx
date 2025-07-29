@@ -35,19 +35,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "mohit.suryavanshi@example.com",
-      href: "mailto:mohit.suryavanshi@example.com"
+      value: "mohitsuryavanshi8506@gmail.com",
+      href: "mailto:mohitsuryavanshi8506@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210"
+      value: "+91 9310857538",
+      href: "tel:+919310857538"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Mumbai, Maharashtra, India",
+      value: "Buddh Vihar, Ghaziabad, Akbarpur, Bharampur",
       href: "#"
     }
   ];
