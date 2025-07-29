@@ -20,7 +20,7 @@ const Hero = () => {
               Hi, I'm <span className="gradient-text">Mohit</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-              Full Stack Web Developer | JavaScript & React Expert
+              Front-end Web Developer | JavaScript & React Expert
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Passionate about creating innovative web solutions that bridge the gap between 
