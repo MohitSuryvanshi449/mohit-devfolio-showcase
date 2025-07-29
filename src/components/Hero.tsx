@@ -1,6 +1,9 @@
 import { Download, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
+import reactIcon from '@/assets/react-icon.png';
+import jsIcon from '@/assets/js-icon.png';
+import htmlIcon from '@/assets/html-icon.png';
 
 const Hero = () => {
   return (
@@ -61,9 +64,15 @@ const Hero = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-float neon-glow" />
-      <div className="absolute bottom-20 right-10 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 right-20 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-20 left-10 w-20 h-20 rounded-full animate-float neon-glow overflow-hidden">
+        <img src={reactIcon} alt="React" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute bottom-20 right-10 w-16 h-16 rounded-full animate-float overflow-hidden" style={{ animationDelay: '1s' }}>
+        <img src={jsIcon} alt="JavaScript" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute top-1/2 right-20 w-12 h-12 rounded-full animate-float overflow-hidden" style={{ animationDelay: '2s' }}>
+        <img src={htmlIcon} alt="HTML5" className="w-full h-full object-cover" />
+      </div>
     </section>
   );
 };
