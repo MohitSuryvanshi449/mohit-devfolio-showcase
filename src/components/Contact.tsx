@@ -75,14 +75,14 @@ const Contact = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="card-glow border-gray-800/50">
+          <Card className="card-glow border-gray-800/50 order-2 lg:order-1">
             <CardHeader>
-              <CardTitle className="text-2xl gradient-text">Send Message</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl gradient-text">Send Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <Input
                     name="name"
@@ -124,24 +124,24 @@ const Contact = () => {
           </Card>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
             <Card className="card-glow border-gray-800/50">
               <CardHeader>
-                <CardTitle className="text-2xl gradient-text">Contact Information</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl gradient-text">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
                   <a
                     key={index}
                     href={info.href}
-                    className="flex items-center space-x-4 p-4 rounded-lg hover:bg-purple-500/10 transition-all duration-300 group border border-transparent hover:border-purple-500/30"
+                    className="flex items-center space-x-4 p-3 sm:p-4 rounded-lg hover:bg-purple-500/10 transition-all duration-300 group border border-transparent hover:border-purple-500/30"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-300">
-                      <info.icon className="w-6 h-6 text-purple-400 group-hover:text-white transition-colors duration-300" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-300">
+                      <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-white transition-colors duration-300" />
                     </div>
                     <div>
-                      <p className="font-medium text-white group-hover:text-purple-300 transition-colors duration-300">{info.label}</p>
-                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{info.value}</p>
+                      <p className="font-medium text-white group-hover:text-purple-300 transition-colors duration-300 text-sm sm:text-base">{info.label}</p>
+                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-xs sm:text-sm">{info.value}</p>
                     </div>
                   </a>
                 ))}
@@ -150,28 +150,28 @@ const Contact = () => {
 
             <Card className="card-glow border-gray-800/50">
               <CardHeader>
-                <CardTitle className="text-2xl gradient-text">Follow Me</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl gradient-text">Follow Me</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-3 sm:gap-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center hover:from-purple-500/40 hover:to-pink-500/40 hover:scale-110 transition-all duration-300 group border border-purple-500/30 hover:border-purple-400"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center hover:from-purple-500/40 hover:to-pink-500/40 hover:scale-110 transition-all duration-300 group border border-purple-500/30 hover:border-purple-400"
                       aria-label={social.label}
                     >
-                      <social.icon className="w-6 h-6 text-purple-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                      <social.icon className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
                     </a>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <div className="text-center p-6 bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-xl border border-gray-700/50">
-              <p className="text-gray-300 mb-4">
+            <div className="text-center p-4 sm:p-6 bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-xl border border-gray-700/50">
+              <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                 Available for freelance work and collaboration
               </p>
               <div className="flex items-center justify-center space-x-2">

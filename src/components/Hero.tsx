@@ -25,18 +25,18 @@ const Hero = () => {
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
               Front-end Web Developer | JavaScript & React Expert
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
               Passionate about creating innovative web solutions that bridge the gap between 
               stunning frontend experiences and robust backend architectures.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button size="lg" className="btn-primary group">
+            <Button size="lg" className="btn-primary group w-full sm:w-auto">
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download Resume
             </Button>
-            <Button variant="outline" size="lg" className="group">
+            <Button variant="outline" size="lg" className="group w-full sm:w-auto">
               <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Hire Me
             </Button>
@@ -64,13 +64,13 @@ const Hero = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 rounded-full animate-float neon-glow overflow-hidden">
+      <div className="absolute top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full animate-float neon-glow overflow-hidden">
         <img src={reactIcon} alt="React" className="w-full h-full object-cover" />
       </div>
-      <div className="absolute bottom-20 right-10 w-16 h-16 rounded-full animate-float overflow-hidden" style={{ animationDelay: '1s' }}>
+      <div className="absolute bottom-20 right-4 sm:right-10 w-12 h-12 sm:w-16 sm:h-16 rounded-full animate-float overflow-hidden" style={{ animationDelay: '1s' }}>
         <img src={jsIcon} alt="JavaScript" className="w-full h-full object-cover" />
       </div>
-      <div className="absolute top-1/2 right-20 w-12 h-12 rounded-full animate-float overflow-hidden" style={{ animationDelay: '2s' }}>
+      <div className="absolute top-1/2 right-8 sm:right-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full animate-float overflow-hidden" style={{ animationDelay: '2s' }}>
         <img src={htmlIcon} alt="HTML5" className="w-full h-full object-cover" />
       </div>
     </section>

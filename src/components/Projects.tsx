@@ -73,26 +73,26 @@ const Projects = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <Card key={index} className="group overflow-hidden card-glow border-gray-800/50 hover:border-purple-500/50 transition-all duration-500">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl text-white group-hover:text-purple-300 transition-colors duration-300">
+              <CardHeader className="pb-3 sm:pb-4">
+                <CardTitle className="text-lg sm:text-xl text-white group-hover:text-purple-300 transition-colors duration-300">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4">
                 <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                   {project.description}
                 </p>
@@ -109,7 +109,7 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                <div className="flex gap-3 pt-4">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4">
                   <Button size="sm" variant="outline" className="flex-1 group/btn border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300">
                     <Github className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                     Code
