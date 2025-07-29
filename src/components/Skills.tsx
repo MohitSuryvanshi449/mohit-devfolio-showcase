@@ -16,6 +16,7 @@ const Skills = () => {
     {
       title: "Tools & Version Control",
       skills: [
+        { name: "Visual Studio Code", level: 90 },
         { name: "Git", level: 85 },
         { name: "GitHub", level: 85 }
       ]
@@ -28,6 +29,7 @@ const Skills = () => {
     { name: "JavaScript", icon: "💛" },
     { name: "React", icon: "⚛️" },
     { name: "Bootstrap", icon: "🔷" },
+    { name: "VS Code", icon: "💻" },
     { name: "Git", icon: "📚" },
     { name: "GitHub", icon: "🐙" }
   ];
