@@ -2,13 +2,14 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import mernBlogImage from '@/assets/mern-blog-platform.jpg';
 
 const Projects = () => {
   const projects = [
     {
       title: "MERN Blog Platform",
       description: "A full-featured blogging platform with user authentication, rich text editor, and comment system. Built with React, Node.js, Express, and MongoDB.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce686d2c6f44?w=800&h=400&fit=crop",
+      image: mernBlogImage,
       tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
       github: "https://github.com",
       demo: "https://demo.com"
