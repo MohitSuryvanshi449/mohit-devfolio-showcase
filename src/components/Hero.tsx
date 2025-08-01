@@ -1,6 +1,7 @@
 import { Download, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
+import profilePhoto from '@/assets/profile-photo.jpg';
 import reactIcon from '@/assets/react-icon.png';
 import jsIcon from '@/assets/js-icon.png';
 import htmlIcon from '@/assets/html-icon.png';
@@ -18,6 +19,17 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
         <div className="animate-fade-in">
+          {/* Profile Photo */}
+          <div className="mb-8 flex justify-center">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl neon-glow">
+              <img 
+                src={profilePhoto} 
+                alt="Mohit - Frontend Developer" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
           <div className="mb-6">
             <h1 className="text-5xl md:text-7xl font-bold mb-4">
               Hi, I'm <span className="gradient-text">Mohit</span>
