@@ -2,14 +2,13 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import mernBlogImage from '@/assets/mern-blog-platform.jpg';
 
 const Projects = () => {
   const projects = [
     {
       title: "MERN Blog Platform",
       description: "A full-featured blogging platform with user authentication, rich text editor, and comment system. Built with React, Node.js, Express, and MongoDB.",
-      image: mernBlogImage,
+      image: "https://images.unsplash.com/photo-1486312338219-ce686d2c6f44?w=800&h=400&fit=crop",
       tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
       github: "https://github.com",
       demo: "https://demo.com"
@@ -57,60 +56,51 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-transparent to-purple-900/10" />
-      <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="projects" className="py-20 bg-secondary/5">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6" />
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-6" />
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="group overflow-hidden card-glow border-gray-800/50 hover:border-purple-500/50 transition-all duration-500">
+            <Card key={index} className="card-glow group overflow-hidden">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <CardHeader className="pb-3 sm:pb-4">
-                <CardTitle className="text-lg sm:text-xl text-white group-hover:text-purple-300 transition-colors duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-200">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent className="space-y-3 sm:space-y-4">
-                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex} 
-                      variant="secondary" 
-                      className="text-xs bg-gray-800/50 text-purple-300 border border-purple-500/30 hover:bg-purple-500/20 hover:border-purple-400 transition-colors duration-300"
-                    >
+                    <Badge key={techIndex} variant="secondary" className="text-xs">
                       {tech}
                     </Badge>
                   ))}
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4">
-                  <Button size="sm" variant="outline" className="flex-1 group/btn border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300">
+                <div className="flex gap-3 pt-2">
+                  <Button size="sm" variant="outline" className="flex-1 group/btn">
                     <Github className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                     Code
                   </Button>
@@ -124,8 +114,8 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <Button variant="outline" size="lg" className="group border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300">
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" className="group">
             <Github className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             View All Projects on GitHub
           </Button>

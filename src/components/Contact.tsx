@@ -35,19 +35,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "mohitsuryavanshi8506@gmail.com",
-      href: "mailto:mohitsuryavanshi8506@gmail.com"
+      value: "mohit.suryavanshi@example.com",
+      href: "mailto:mohit.suryavanshi@example.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 9310857538",
-      href: "tel:+919310857538"
+      value: "+91 98765 43210",
+      href: "tel:+919876543210"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Buddh Vihar, Ghaziabad, Akbarpur, Bharampur",
+      value: "Mumbai, Maharashtra, India",
       href: "#"
     }
   ];
@@ -59,30 +59,26 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-900/10 via-transparent to-blue-900/10" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="contact" className="py-20">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Let's discuss your next project or just say hello. I'm always open to new opportunities and collaborations.
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6" />
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-6" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="card-glow border-gray-800/50 order-2 lg:order-1">
+          <Card className="card-glow">
             <CardHeader>
-              <CardTitle className="text-xl sm:text-2xl gradient-text">Send Message</CardTitle>
+              <CardTitle className="text-2xl gradient-text">Send Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Input
                     name="name"
@@ -90,7 +86,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-gray-900/50 border-gray-700 text-white placeholder-gray-400 focus:border-purple-500 transition-all duration-300"
+                    className="transition-all duration-200 focus:scale-[1.02]"
                   />
                 </div>
                 <div>
@@ -101,7 +97,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-gray-900/50 border-gray-700 text-white placeholder-gray-400 focus:border-purple-500 transition-all duration-300"
+                    className="transition-all duration-200 focus:scale-[1.02]"
                   />
                 </div>
                 <div>
@@ -112,7 +108,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="bg-gray-900/50 border-gray-700 text-white placeholder-gray-400 focus:border-purple-500 transition-all duration-300"
+                    className="transition-all duration-200 focus:scale-[1.02]"
                   />
                 </div>
                 <Button type="submit" className="w-full btn-primary group">
@@ -124,59 +120,59 @@ const Contact = () => {
           </Card>
 
           {/* Contact Info */}
-          <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
-            <Card className="card-glow border-gray-800/50">
+          <div className="space-y-8">
+            <Card className="card-glow">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl gradient-text">Contact Information</CardTitle>
+                <CardTitle className="text-2xl gradient-text">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6">
+              <CardContent className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <a
                     key={index}
                     href={info.href}
-                    className="flex items-center space-x-4 p-3 sm:p-4 rounded-lg hover:bg-purple-500/10 transition-all duration-300 group border border-transparent hover:border-purple-500/30"
+                    className="flex items-center space-x-4 p-4 rounded-lg hover:bg-secondary/20 transition-colors duration-200 group"
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-300">
-                      <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-white transition-colors duration-300" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <info.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-white group-hover:text-purple-300 transition-colors duration-300 text-sm sm:text-base">{info.label}</p>
-                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-xs sm:text-sm">{info.value}</p>
+                      <p className="font-medium">{info.label}</p>
+                      <p className="text-muted-foreground">{info.value}</p>
                     </div>
                   </a>
                 ))}
               </CardContent>
             </Card>
 
-            <Card className="card-glow border-gray-800/50">
+            <Card className="card-glow">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl gradient-text">Follow Me</CardTitle>
+                <CardTitle className="text-2xl gradient-text">Follow Me</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-3 sm:gap-4">
+                <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center hover:from-purple-500/40 hover:to-pink-500/40 hover:scale-110 transition-all duration-300 group border border-purple-500/30 hover:border-purple-400"
+                      className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-200 group"
                       aria-label={social.label}
                     >
-                      <social.icon className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                      <social.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                     </a>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <div className="text-center p-4 sm:p-6 bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-xl border border-gray-700/50">
-              <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
+            <div className="text-center">
+              <p className="text-muted-foreground mb-4">
                 Available for freelance work and collaboration
               </p>
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-sm text-green-400 font-medium">Currently accepting new projects</span>
+                <span className="text-sm text-green-500 font-medium">Currently accepting new projects</span>
               </div>
             </div>
           </div>
