@@ -56,44 +56,57 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-secondary/5">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section id="projects" className="py-24 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-secondary rounded-full blur-2xl opacity-25 floating-element" />
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-accent rounded-full blur-3xl opacity-20 floating-element" style={{ animationDelay: '2s' }} />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20 slide-up">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-6" />
+          <div className="w-24 h-1.5 bg-gradient-primary mx-auto rounded-full mt-8" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 slide-up-delayed">
           {projects.map((project, index) => (
-            <Card key={index} className="card-glow group overflow-hidden">
+            <Card key={index} className="card-glow group overflow-hidden cursor-pointer" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-56 object-cover transition-all duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <Button size="sm" variant="secondary" className="btn-secondary h-8 w-8 p-0">
+                    <Github className="w-4 h-4" />
+                  </Button>
+                  <Button size="sm" className="btn-primary h-8 w-8 p-0">
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </div>
               </div>
               
-              <CardHeader>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-200">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm leading-relaxed">
+              <CardContent className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs">
+                    <Badge key={techIndex} variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors">
                       {tech}
                     </Badge>
                   ))}
@@ -114,9 +127,9 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group">
-            <Github className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+        <div className="text-center mt-16 slide-up-delayed-2">
+          <Button variant="outline" size="lg" className="group btn-secondary text-lg px-8 py-4">
+            <Github className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
             View All Projects on GitHub
           </Button>
         </div>

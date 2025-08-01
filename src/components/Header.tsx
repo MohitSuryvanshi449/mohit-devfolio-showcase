@@ -24,28 +24,32 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-background/90 backdrop-blur-md border-b border-primary/20 shadow-lg' 
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold gradient-text">
-            Mohit Suryavanshi
+          <div className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300 cursor-pointer">
+            MS
           </div>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200"
+                className="relative text-foreground hover:text-primary transition-all duration-300 group overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </a>
             ))}
-            <Button variant="outline" className="btn-primary">
+            <Button className="btn-primary text-sm">
               Download Resume
             </Button>
           </nav>
